@@ -1,29 +1,29 @@
 package com.example.demo;
 
-import java.util.List;
-import java.util.Map;
+//import java.util.List;
+//import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.client.RestTemplate;
+//import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.fasterxml.jackson.core.type.TypeReference;
+//import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
+//import org.springframework.http.HttpEntity;
+//import org.springframework.http.HttpHeaders;
+//import org.springframework.http.HttpMethod;
 
-import reactor.core.publisher.Flux;
+//import reactor.core.publisher.Flux;
 
 @Controller
 public class DemoController {
 	
-	@Value("${azure.api.baseUri}")
+	/* @Value("${azure.api.baseUri}")
 	private String apiBaseUri;
 	
 	@Value("${azure.api.key}")
@@ -33,13 +33,13 @@ public class DemoController {
 	private UserRepository repository;
 
 	@Autowired
-	private RestTemplate restTemplate;
+	private RestTemplate restTemplate; */
 
 	@GetMapping
 	public String index(Model model) {
 
 		// ユーザーデータをDBから直接取得する
-		Flux<User> firstNameUserFlux = repository.findByEmail("user3@gmail.com");
+		/* Flux<User> firstNameUserFlux = repository.findByEmail("user3@gmail.com");
 		User dbData = firstNameUserFlux.blockFirst();
 
 		model.addAttribute("db_email", dbData.getEmail());
@@ -65,8 +65,16 @@ public class DemoController {
 			
 		}catch(Exception ex) {
 			System.err.println(ex);
-		}
-
+		} */
+		
+		model.addAttribute("db_email", "db_email");
+		model.addAttribute("db_location", "db_location");
+		model.addAttribute("db_interests", "db_interests");
+		
+		model.addAttribute("api_email", "api_email");
+		model.addAttribute("api_location", "api_location");
+		model.addAttribute("api_interests", "api_interests");
+		
 		return "index";
 	}
 
