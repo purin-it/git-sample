@@ -1,0 +1,23 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- master
+
+pr: none
+
+variables:
+  # Azure service connection established during pipeline creation
+  azureSubscription: 'da41eab6-8818-4865-a2e7-4aef0be9d6c0'
+  appName: 'azureTest-purinit'
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+  
+- task: AzureWebApp@1 # Add this at the end of your file
+  inputs:
+    azureSubscription: <Azure service connection>
+    appType: webAppLinux
+    appName: $(appName)
+    package: $(System.ArtifactsDirectory)/**/*.war
