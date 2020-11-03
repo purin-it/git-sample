@@ -7,7 +7,7 @@ variables:
   appName: 'azureTest-purinit'
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
-
+  
 - task: AzureWebApp@1 # Add this at the end of your file
   inputs:
     azureSubscription: $(azureSubscription)
