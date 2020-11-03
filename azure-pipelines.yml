@@ -18,5 +18,8 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: echo test!
-  displayName: 'Run a test script'
+- script: mvn clean install
+  displayName: 'Run a mvn clean install'
+
+- script: mvn azure-webapp:deploy
+  displayName: 'Run a deploy task'
