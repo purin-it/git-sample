@@ -18,5 +18,5 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: test!
+- script: echo test!
   displayName: 'Run a test script'
