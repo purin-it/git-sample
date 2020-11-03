@@ -35,7 +35,7 @@ public class DemoController {
 	@Autowired
 	private RestTemplate restTemplate; */
 
-	@GetMapping
+	@GetMapping("/")
 	public String index(Model model) {
 
 		// ユーザーデータをDBから直接取得する
@@ -67,13 +67,13 @@ public class DemoController {
 			System.err.println(ex);
 		} */
 		
-		model.addAttribute("db_email", "db_email_2");
-		model.addAttribute("db_location", "db_location_2");
-		model.addAttribute("db_interests", "db_interests_2");
+		model.addAttribute("db_email", "db_email_3");
+		model.addAttribute("db_location", "db_location_3");
+		model.addAttribute("db_interests", "db_interests_3");
 		
-		model.addAttribute("api_email", "api_email_2");
-		model.addAttribute("api_location", "api_location_2");
-		model.addAttribute("api_interests", "api_interests_2");
+		model.addAttribute("api_email", "api_email_3");
+		model.addAttribute("api_location", "api_location_3");
+		model.addAttribute("api_interests", "api_interests_3");
 		
 		return "index";
 	}
