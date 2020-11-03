@@ -36,6 +36,7 @@ stages:
       displayName: 'Maven Package'
       inputs:
         mavenPomFile: 'pom.xml'
+        goals: 'clean install'
 
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
