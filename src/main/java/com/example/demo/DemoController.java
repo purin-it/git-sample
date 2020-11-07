@@ -67,13 +67,13 @@ public class DemoController {
 			System.err.println(ex);
 		} */
 		
-		model.addAttribute("db_email", "db_email_6");
-		model.addAttribute("db_location", "db_location_6");
-		model.addAttribute("db_interests", "db_interests_6");
+		model.addAttribute("db_email", "db_email_7");
+		model.addAttribute("db_location", "db_location_7");
+		model.addAttribute("db_interests", "db_interests_7");
 		
-		model.addAttribute("api_email", "api_email_6");
-		model.addAttribute("api_location", "api_location_6");
-		model.addAttribute("api_interests", "api_interests_6");
+		model.addAttribute("api_email", "api_email_7");
+		model.addAttribute("api_location", "api_location_7");
+		model.addAttribute("api_interests", "api_interests_7");
 		
 		return "index";
 	}
